@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "@uniswap/lib": "1.1.1",
-    "@uniswap/v2-core": "^1.0.1",
+    "@uniswap/v2-core": "file:../pancake-swap-core",
     "truffle-hdwallet-provider": "^1.0.17",
     "truffle-plugin-verify": "^0.4.0"
   },
@@ -30,6 +30,7 @@
     "ncp": "^2.0.0",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.0",
+    "sol-merger": "^3.1.0",
     "solc": "0.6.6",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.3"
@@ -44,7 +45,8 @@
     "postcompile": "yarn copy-v1-artifacts",
     "pretest": "yarn compile",
     "test": "mocha",
-    "prepublishOnly": "yarn test"
+    "prepublishOnly": "yarn test",
+    "build-contracts": "sol-merger \"./contracts/PancakeRouter.sol\" ./build"
   },
   "license": "GPL-3.0-or-later"
 }
